@@ -2,7 +2,7 @@
 
 #include "Buzzer_Interface.h"
 
-buzzer_t alarm ={.pin.port=PORTA_INDEX,.pin.pin=PIN0_INDEX,.type=Source_Buzzer,.status=BUZZER_OFF};
+buzzer_t alarm ={.buzzer.port=PORTA_INDEX,.buzzer.pin=PIN0_INDEX,.type=BUZZER_SOURCE,.status=BUZZER_OFF};
     
 HBuzzer_initialize(&alarm);
 MCAL_Delay_ms(1000);

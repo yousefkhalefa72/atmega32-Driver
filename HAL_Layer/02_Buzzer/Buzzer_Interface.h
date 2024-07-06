@@ -25,13 +25,13 @@ typedef enum
 
 typedef enum
 {
-    Source_Buzzer = 0,
-    Sink_Buzzer = 1
+    BUZZER_SOURCE = 0,
+    BUZZER_SINK = 1
 }buzzer_type_t;
 
 typedef struct
 {
-    pin_t pin;
+    pin_t buzzer;
     buzzer_type_t type :1;
     buzzer_status_t status :1;
 }buzzer_t;

@@ -2,8 +2,8 @@
 
 #include "LED_Interface.h"
 
-led_t green_led ={.pin.port=PORTA_INDEX,.pin.pin=PIN0_INDEX,.type=Source_Led,.status=LED_OFF};
-led_t red_led ={.pin.port=PORTC_INDEX,.pin.pin=PIN4_INDEX,.type=Sink_Led,.status=LED_ON};
+led_t green_led ={.led.port=PORTA_INDEX,.led.pin=PIN0_INDEX,.type=LED_SOURCE,.status=LED_OFF};
+led_t red_led ={.led.port=PORTC_INDEX,.led.pin=PIN4_INDEX,.type=LED_SINK,.status=LED_ON};
 
 HLED_initialize(&green_led);
 HLED_initialize(&red_led);

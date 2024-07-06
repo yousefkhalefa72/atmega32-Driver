@@ -17,7 +17,7 @@ Std_Return HServo_OC1A_SetServoAngle(sint16 angle)
     // Calculate pulse width in microseconds
     uint16_t pulse_width = SERVO_MAX_PULSE_WIDTH + ((sint32)(angle-SERVO_MAX_ANGLE)*(SERVO_MAX_PULSE_WIDTH-SERVO_MIN_PULSE_WIDTH))/(SERVO_MAX_ANGLE-SERVO_MIN_ANGLE);
     
-    return MPWM1_Start(FAST_PWM,T1_PRESCALER_8,SERVO_PERIOD,pulse_width,0);
+    return MPWM1_Start(PWM_FAST_PWM,T1_PRESCALER_8,SERVO_PERIOD,pulse_width,0);
 }
 
 Std_Return HServo_OC1B_SetServoAngle(sint16 angle) 
@@ -31,5 +31,5 @@ Std_Return HServo_OC1B_SetServoAngle(sint16 angle)
     // Calculate pulse width in microseconds
     uint16_t pulse_width = SERVO_MAX_PULSE_WIDTH + ((sint32)(angle-SERVO_MAX_ANGLE)*(SERVO_MAX_PULSE_WIDTH-SERVO_MIN_PULSE_WIDTH))/(SERVO_MAX_ANGLE-SERVO_MIN_ANGLE);
 
-    return MPWM1_Start(FAST_PWM,T1_PRESCALER_8,SERVO_PERIOD,0,pulse_width);
+    return MPWM1_Start(PWM_FAST_PWM,T1_PRESCALER_8,SERVO_PERIOD,0,pulse_width);
 }

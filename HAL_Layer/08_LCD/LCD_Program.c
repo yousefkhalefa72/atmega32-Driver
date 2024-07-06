@@ -233,7 +233,7 @@ Std_Return HLCD_send_float(lcd_t *lcd, float32 num)
 		num *=-1;
 	}
     uint8 buffer[16]; // Buffer to store the formatted string
-    sprintf((char*)buffer, "%.2f", num); // Format the float number with 2 decimal places
+    sprintf((char*)buffer, "%.2f", (double)num); // Format the float number with 2 decimal places
     return HLCD_send_string(lcd,buffer); // Print the formatted string on LCD
 }
 

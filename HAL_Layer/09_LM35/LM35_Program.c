@@ -9,7 +9,7 @@
 
 Std_Return HLM35_Init(ADC_RefVolt_t reference_volt)
 {
-    return MADC_Init(ADC_DIVF_128,right_adjust,reference_volt);
+    return MADC_Init(ADC_DIVF_128,ADC_right_adjust,reference_volt);
 }
 Std_Return HLM35_DeInit()
 {

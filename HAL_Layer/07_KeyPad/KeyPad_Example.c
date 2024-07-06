@@ -2,7 +2,7 @@
 
 #include "KeyPad_Interface.h"
 
-/* Make sure you connect colums with pull down res */
+/* Make sure you connect columns with pull down res */
 /* config keypad in  KeyPad_Config.h               */
 keypad_t keypad1={.keypad_row_pins[0].port=PORTC_INDEX,.keypad_row_pins[0].pin=PIN0_INDEX,
                   .keypad_row_pins[1].port=PORTC_INDEX,.keypad_row_pins[1].pin=PIN1_INDEX,

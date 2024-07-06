@@ -1,7 +1,6 @@
 /* 
  * File:   Seg_Program.c
  * Author: Yousef.Khalefa
- * 
  * Created on March 9, 2024, 12:02 PM
  */
 

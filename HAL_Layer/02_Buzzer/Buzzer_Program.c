@@ -16,15 +16,15 @@ Std_Return HBuzzer_initialize(buzzer_t *buzzer)
     }
     else
     {
-        buzzer->pin.direction = DIO_DIRECTION_OUTPUT;
+        buzzer->buzzer.direction = DIO_DIRECTION_OUTPUT;
         switch(buzzer->type)
         {
-            case Source_Buzzer:
-                buzzer->pin.logic = buzzer->status;break;
-            case Sink_Buzzer:
-                buzzer->pin.logic = (buzzer->status ^ BIT_MASK);break;
+            case BUZZER_SOURCE:
+                buzzer->buzzer.logic = buzzer->status;break;
+            case BUZZER_SINK:
+                buzzer->buzzer.logic = (buzzer->status ^ BIT_MASK);break;
         }
-        MDIO_SetPinDirection(&(buzzer->pin));
+        MDIO_SetPinDirection(&(buzzer->buzzer));
     }
     return ret;
 }
@@ -40,12 +40,12 @@ Std_Return HBuzzer_turn_on(buzzer_t *buzzer)
      {
         switch(buzzer->type)
         {
-            case Source_Buzzer:
-                buzzer->pin.logic = DIO_HIGH;buzzer->status = BUZZER_ON;
-                MDIO_SetPinValue(&(buzzer->pin), DIO_HIGH);break;
-            case Sink_Buzzer:
-                buzzer->pin.logic = DIO_LOW;buzzer->status = BUZZER_ON;
-                MDIO_SetPinValue(&(buzzer->pin), DIO_LOW);break;
+            case BUZZER_SOURCE:
+                buzzer->buzzer.logic = DIO_HIGH;buzzer->status = BUZZER_ON;
+                MDIO_SetPinValue(&(buzzer->buzzer), DIO_HIGH);break;
+            case BUZZER_SINK:
+                buzzer->buzzer.logic = DIO_LOW;buzzer->status = BUZZER_ON;
+                MDIO_SetPinValue(&(buzzer->buzzer), DIO_LOW);break;
         }
      }
     return ret;
@@ -62,12 +62,12 @@ Std_Return HBuzzer_turn_off(buzzer_t *buzzer)
      {
         switch(buzzer->type)
         {
-            case Source_Buzzer:
-                buzzer->pin.logic = DIO_LOW;buzzer->status = BUZZER_OFF;
-                MDIO_SetPinValue(&(buzzer->pin), DIO_LOW);break;
-            case Sink_Buzzer:
-                buzzer->pin.logic = DIO_HIGH;buzzer->status = BUZZER_OFF;
-                MDIO_SetPinValue(&(buzzer->pin), DIO_HIGH);break;
+            case BUZZER_SOURCE:
+                buzzer->buzzer.logic = DIO_LOW;buzzer->status = BUZZER_OFF;
+                MDIO_SetPinValue(&(buzzer->buzzer), DIO_LOW);break;
+            case BUZZER_SINK:
+                buzzer->buzzer.logic = DIO_HIGH;buzzer->status = BUZZER_OFF;
+                MDIO_SetPinValue(&(buzzer->buzzer), DIO_HIGH);break;
         }
      }
     return ret;
@@ -82,9 +82,9 @@ Std_Return HBuzzer_toggle(buzzer_t *buzzer)
      }
      else
      {
-        buzzer->pin.logic ^= BIT_MASK;
+        buzzer->buzzer.logic ^= BIT_MASK;
         buzzer->status ^= BIT_MASK;
-        MDIO_TogglePinValue(&(buzzer->pin));
+        MDIO_TogglePinValue(&(buzzer->buzzer));
      }
     return ret;
 }

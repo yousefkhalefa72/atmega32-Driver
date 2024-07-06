@@ -25,13 +25,13 @@ typedef enum
 
 typedef enum
 {
-    Source_Led = 0,
-    Sink_Led
+    LED_SOURCE= 0,
+    LED_SINK
 }led_type_t;
 
 typedef struct
 {
-    pin_t pin;
+    pin_t led;
     led_type_t type :1;
     Led_status_t status :1;
 }led_t;

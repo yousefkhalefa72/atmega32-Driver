@@ -80,6 +80,7 @@ Std_Return Hkeypad_get_value(keypad_t *keypad, uint8 *value)
             ret |= MDIO_SetPinValue(&(keypad->keypad_row_pins[row]), DIO_LOW);
         }
     }
+    *value = 0;
     return ret;
 }
 

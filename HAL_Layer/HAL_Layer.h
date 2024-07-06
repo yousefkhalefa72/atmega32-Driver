@@ -23,6 +23,8 @@
 #include "13_EEPROM/EEPROM_Interface.h"
 #include "14_RTC/RTC_Interface.h"
 #include "15_ESP8266/ESP8266_Interface.h"
+#include "16_JoyStick/JoyStick_Interface.h"
+#include "17_PCA9685/PCA9685_Interface.h"
 
 /* Section: Macro Declarations */
 

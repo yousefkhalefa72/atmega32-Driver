@@ -1,7 +1,6 @@
 /* 
  * File:   Relay_Config.h
  * Author: Yousef.Khalefa
- *
  * Created on March 9, 2024, 11:39 AM
  */
 

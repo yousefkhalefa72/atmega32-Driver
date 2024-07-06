@@ -1,7 +1,6 @@
 /* 
  * File:   Relay_Program.c
  * Author: Yousef.Khalefa
- * 
  * Created on March 9, 2024, 11:40 AM
  */
 
