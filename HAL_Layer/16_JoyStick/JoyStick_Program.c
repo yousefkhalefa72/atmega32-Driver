@@ -14,7 +14,7 @@ Std_Return HJoyStick_Init(JoyStick_t* joystick, ADC_RefVolt_t reference_volt)
 	joystick->x_pin.direction=DIO_DIRECTION_INPUT;
 	joystick->y_pin.port=PORTA_INDEX;
 	joystick->y_pin.direction=DIO_DIRECTION_INPUT;
-    return MADC_Init(ADC_DIVF_128,right_adjust,reference_volt);
+    return MADC_Init(ADC_DIVF_128,ADC_right_adjust,reference_volt);
 }
 
 Std_Return HJoyStick_DeInit()
